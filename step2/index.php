@@ -12,9 +12,17 @@
       <canvas id="myChart"></canvas>
     </div>
 
+    <div class="container">
+      <canvas id="myChart1"></canvas>
+    </div>
+
+    <div class="container">
+      <canvas id="myChart2"></canvas>
+    </div>
 
 
-    
+
+
     <!-- chatjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- jquery -->
