@@ -9,9 +9,9 @@ $( document ).ready(function() {
  generaGraficoLine(data);
 
 },
-error: function (richiesta,stato,errore) {
+ error: function (richiesta,stato,errore) {
   alert("Si è verificato un errore", errore);
-}
+ }
 })
 
 $.ajax({

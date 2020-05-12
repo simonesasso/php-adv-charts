@@ -8,17 +8,14 @@
   <body>
     <h1>test</h1>
 
-    <div class="container">
-      <canvas id="myChart"></canvas>
+    <div id="main-container">
+
     </div>
 
-    <div class="container">
-      <canvas id="myChart1"></canvas>
-    </div>
 
-    <div class="container">
-      <canvas id="myChart2"></canvas>
-    </div>
+      
+
+
 
 
 

@@ -15,6 +15,8 @@ error: function (richiesta,stato,errore) {
 })
 
 function generaGraficoLine(data) {
+
+  $("#main-container").append('<div class="container"><canvas id="myChart"></div>');
   var ctx = $('#myChart');
   var myChart = new Chart(ctx, {
      type: data[0]["tipo"],
@@ -108,6 +110,8 @@ function generaGraficoLine(data) {
 // VERSIONE AUTOMATIZZATA CON CICLO FOR NEL CASO IN CUI SI AGGIUNGANO NUOVI DATI
 function generaGraficoPie(data) {
   for (var i = 1; i < data.length; i++) {
+    var nChart = i;
+    $("#main-container").append('<div class="container"><canvas id="myChart' + nChart + '"></div>');
     var selectCanvas = '#myChart' + i;
     var ctx = $(selectCanvas);
     var myChart = new Chart(ctx, {

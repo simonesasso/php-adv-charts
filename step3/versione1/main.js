@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+console.log(level);
 if (level == "guest") {
   ajaxFatturato();
 }else if (level == "employee") {

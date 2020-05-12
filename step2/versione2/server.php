@@ -4,17 +4,17 @@
 
  header('Content-Type: application/json');
 
- 
- $test = [];
+
+ $myArr = [];
  $i = 1;
  foreach ($graphs as $key => $val) {
    if ($key=="fatturato") {
-     $test[0]["grafico"] = "fatturato";
-     $test[0]["tipo"] = $val["type"];
-     $test[0]["data"] = $val["data"];
+     $myArr[0]["grafico"] = "fatturato";
+     $myArr[0]["tipo"] = $val["type"];
+     $myArr[0]["data"] = $val["data"];
    }elseif ($key!="fatturato") {
-     $test[$i]["grafico"] = $key;
-     $test[$i]["tipo"] = $val["type"];
+     $myArr[$i]["grafico"] = $key;
+     $myArr[$i]["tipo"] = $val["type"];
      $labels = [];
      $data = [];
      $arr = $graphs[$key][data];
@@ -23,13 +23,14 @@
        $data[] = $value;
 
      }
-     $test[$i]["labels"] = $labels;
-     $test[$i]["data"] = $data;
+     $myArr[$i]["labels"] = $labels;
+     $myArr[$i]["data"] = $data;
      $i++;
    }
    }
 
 
- echo json_encode($test);
+
+ echo json_encode($myArr);
 
 ?>
