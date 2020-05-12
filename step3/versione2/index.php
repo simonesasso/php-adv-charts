@@ -8,12 +8,13 @@
   <body>
     <h1>test</h1>
   <?php
-  $utente = $_GET["level"];
-   if ($utente == "guest") {
+
+$tipoUtente = $_GET["level"];
+   if ($tipoUtente == "guest") {
      echo '<div class="container">';
       echo '<canvas id="myChart"></canvas>';
      echo '</div>';
-   }elseif ($utente == "employee") {
+   }elseif ($tipoUtente == "employee") {
      echo '<div class="container">';
       echo '<canvas id="myChart"></canvas>';
      echo '</div>';
@@ -21,7 +22,7 @@
      echo '<div class="container">';
       echo '<canvas id="myChart1"></canvas>';
      echo '</div>';
-   }elseif ($utente == "clevel") {
+   }elseif ($tipoUtente == "clevel") {
      echo '<div class="container">';
       echo '<canvas id="myChart"></canvas>';
      echo '</div>';
@@ -35,6 +36,8 @@
       echo '</div>';
 
    }
+   session_start();
+   $_SESSION['utente'] = $tipoUtente;
    ?>
 
 
