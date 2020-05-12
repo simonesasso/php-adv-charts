@@ -4,7 +4,7 @@
 
  header('Content-Type: application/json');
 
- // $test = [["grafico" =>"","labels" => [], "data" => []],["grafico" =>"","labels" => [], "data" => []]];
+ 
  $test = [];
  $i = 1;
  foreach ($graphs as $key => $val) {
