@@ -1,19 +1,19 @@
 $( document ).ready(function() {
-
+console.log(level);
   $.ajax({
  url: "server.php",
  method: "GET",
 
  success: function (data,stato) {
  console.log(data);
- if (data.length==3) {
+ if (level=="clevel") {
    generaGraficoLine(data);
    generaGraficoPie(data);
    generaGraficoTreLinee(data);
- }else if (data.length==2) {
+ }else if (level=="employee") {
    generaGraficoLine(data);
    generaGraficoPie(data);
- }else if (data.length==1) {
+ }else if (level=="guest") {
    generaGraficoLine(data);
  }
 

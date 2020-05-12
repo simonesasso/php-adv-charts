@@ -36,10 +36,13 @@ $tipoUtente = $_GET["level"];
       echo '</div>';
 
    }
-   
+
    ?>
 
-
+   <!-- passo la variabile a javascript -->
+      <script>
+      var level = <?php echo json_encode($tipoUtente); ?>;
+      </script>
 
 
 

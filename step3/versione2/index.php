@@ -36,11 +36,13 @@ $tipoUtente = $_GET["level"];
       echo '</div>';
 
    }
-   session_start();
-   $_SESSION['utente'] = $tipoUtente;
+
    ?>
 
-
+<!-- passo la variabile a javascript -->
+   <script>
+   var level = <?php echo json_encode($tipoUtente); ?>;
+   </script>
 
 
 
@@ -49,5 +51,6 @@ $tipoUtente = $_GET["level"];
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js" charset="utf-8"></script>
+
   </body>
 </html>

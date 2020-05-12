@@ -6,15 +6,11 @@
 
 
  $myArr = [];
- $i = 1;
+
  foreach ($graphs as $key => $val) {
-   if ($key=="fatturato") {
-     $myArr[0]["grafico"] = "fatturato";
+   if ($key=="team_efficiency") {
+     $myArr[0]["grafico"] = $key;
      $myArr[0]["tipo"] = $val["type"];
-     $myArr[0]["data"] = $val["data"];
-   }elseif ($key!="fatturato") {
-     $myArr[$i]["grafico"] = $key;
-     $myArr[$i]["tipo"] = $val["type"];
      $labels = [];
      $data = [];
      $arr = $graphs[$key][data];
@@ -23,9 +19,8 @@
        $data[] = $value;
 
      }
-     $myArr[$i]["labels"] = $labels;
-     $myArr[$i]["data"] = $data;
-     $i++;
+     $myArr[0]["labels"] = $labels;
+     $myArr[0]["data"] = $data;
    }
    }
 
