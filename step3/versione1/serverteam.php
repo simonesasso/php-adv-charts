@@ -7,22 +7,20 @@
 
  $myArr = [];
 
- foreach ($graphs as $key => $val) {
-   if ($key=="team_efficiency") {
-     $myArr[0]["grafico"] = $key;
-     $myArr[0]["tipo"] = $val["type"];
+
+     $myArr["team_efficiency"]["tipo"] = $graphs["team_efficiency"]["type"];
+
      $labels = [];
      $data = [];
-     $arr = $graphs[$key][data];
+     $arr = $graphs["team_efficiency"]["data"];
      foreach ($arr as $key => $value) {
        $labels[] = $key;
        $data[] = $value;
 
      }
-     $myArr[0]["labels"] = $labels;
-     $myArr[0]["data"] = $data;
-   }
-   }
+     $myArr["team_efficiency"]["labels"] = $labels;
+     $myArr["team_efficiency"]["data"] = $data;
+
 
 
  echo json_encode($myArr);

@@ -75,12 +75,12 @@ error: function (richiesta,stato,errore) {
 function generaGraficoLine(data) {
   var ctx = $('#myChart');
   var myChart = new Chart(ctx, {
-     type: data[0]["tipo"],
+     type: data["fatturato"]["type"],
      data: {
          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
          datasets: [{
              label: 'Vendite',
-             data: data[0]["data"],
+             data: data["fatturato"]["data"],
              backgroundColor: [
                  'rgba(0, 255, 0, 0.8)',
                  'rgba(0, 255, 0, 0.8)',
@@ -127,12 +127,12 @@ function generaGraficoLine(data) {
 function generaGraficoPie(data) {
   var ctx = $('#myChart1');
   var myChart = new Chart(ctx, {
-     type: data[0]["tipo"],
+     type: data["fatturato_by_agent"]["tipo"],
      data: {
-         labels: data[0]["labels"],
+         labels: data["fatturato_by_agent"]["labels"],
          datasets: [{
              label: 'Vendite',
-             data: data[0]["data"],
+             data: data["fatturato_by_agent"]["data"],
              backgroundColor: [
                  'rgba(0, 255, 0, 0.8)',
                  'rgba(0, 255, 0, 0.8)',
@@ -165,12 +165,12 @@ function generaGraficoPie(data) {
 function generaGraficoTreLinee(data) {
   var ctx = $('#myChart2');
   var myChart = new Chart(ctx, {
-     type: data[0]["tipo"],
+     type: data["team_efficiency"]["tipo"],
      data: {
          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
          datasets: [{
-             label: data[0]["labels"][0],
-             data: data[0]["data"][0],
+             label: data["team_efficiency"]["labels"][0],
+             data: data["team_efficiency"]["data"][0],
              borderColor: [
                  'rgba(255, 0, 0, 0.8)',
                ]
@@ -178,15 +178,15 @@ function generaGraficoTreLinee(data) {
 
            },
            {
-             label:  data[0]["labels"][1],
-             data: data[0]["data"][1],
+             label:  data["team_efficiency"]["labels"][1],
+             data: data["team_efficiency"]["data"][1],
              borderColor: [
                  'rgba(0, 255, 0, 0.3)',
                ]
            },
            {
-             label:  data[0]["labels"][2],
-             data: data[0]["data"][2],
+             label:  data["team_efficiency"]["labels"][2],
+             data: data["team_efficiency"]["data"][2],
              borderColor: [
                  'rgba(0, 0, 255, 0.3)',
                ]
