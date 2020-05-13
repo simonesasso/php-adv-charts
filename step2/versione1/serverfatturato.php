@@ -6,14 +6,12 @@
 
 
  $myarr = [];
- 
- foreach ($graphs as $key => $val) {
-   if ($key=="fatturato") {
-     $myarr[0]["grafico"] = "fatturato";
-     $myarr[0]["tipo"] = $val["type"];
-     $myarr[0]["data"] = $val["data"];
-   }
-   }
+
+
+     
+     $myarr["fatturato"]["tipo"] = $graphs["fatturato"]["type"];
+     $myarr["fatturato"]["data"] = $graphs["fatturato"]["data"];
+
 
 
  echo json_encode($myarr);

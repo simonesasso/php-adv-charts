@@ -31,12 +31,12 @@ $.ajax({
 function generaGraficoLine(data) {
   var ctx = $('#myChart');
   var myChart = new Chart(ctx, {
-     type: data[0]["tipo"],
+     type: data["fatturato"]["tipo"],
      data: {
          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
          datasets: [{
              label: 'Vendite',
-             data: data[0]["data"],
+             data: data["fatturato"]["data"],
              backgroundColor: [
                  'rgba(0, 255, 0, 0.8)',
                  'rgba(0, 255, 0, 0.8)',
@@ -83,12 +83,12 @@ function generaGraficoLine(data) {
 function generaGraficoPie(data) {
   var ctx = $('#myChart1');
   var myChart = new Chart(ctx, {
-     type: data[0]["tipo"],
+     type: data["fatturato_by_agent"]["tipo"],
      data: {
-         labels: data[0]["labels"],
+         labels: data["fatturato_by_agent"]["labels"],
          datasets: [{
              label: 'Vendite',
-             data: data[0]["data"],
+             data: data["fatturato_by_agent"]["data"],
              backgroundColor: [
                  'rgba(0, 255, 0, 0.8)',
                  'rgba(0, 255, 0, 0.8)',

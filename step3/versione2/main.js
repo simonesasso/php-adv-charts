@@ -3,18 +3,18 @@ console.log(level);
   $.ajax({
  url: "server.php",
  method: "GET",
-
+ data: {livello: level},
  success: function (data,stato) {
  console.log(data);
  if (level=="clevel") {
-   generaGraficoLine(data);
-   generaGraficoPie(data);
-   generaGraficoTreLinee(data);
+   generaGraficoLine(data["fatturato"]);
+   generaGraficoPie(data["fatturatoAgent"]);
+   generaGraficoTreLinee(data["team"]);
  }else if (level=="employee") {
-   generaGraficoLine(data);
-   generaGraficoPie(data);
+   generaGraficoLine(data["fatturato"]);
+   generaGraficoPie(data["fatturatoAgent"]);
  }else if (level=="guest") {
-   generaGraficoLine(data);
+   generaGraficoLine(data["fatturato"]);
  }
 
 },
@@ -26,12 +26,12 @@ error: function (richiesta,stato,errore) {
 function generaGraficoLine(data) {
   var ctx = $('#myChart');
   var myChart = new Chart(ctx, {
-     type: data[0]["tipo"],
+     type: data["tipo"],
      data: {
          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
          datasets: [{
              label: 'Vendite',
-             data: data[0]["data"],
+             data: data["data"],
              backgroundColor: [
                  'rgba(0, 255, 0, 0.8)',
                  'rgba(0, 255, 0, 0.8)',
@@ -78,12 +78,12 @@ function generaGraficoLine(data) {
 function generaGraficoPie(data) {
   var ctx = $('#myChart1');
   var myChart = new Chart(ctx, {
-     type: data[1]["tipo"],
+     type: data["tipo"],
      data: {
-         labels: data[1]["labels"],
+         labels: data["labels"],
          datasets: [{
              label: 'Vendite',
-             data: data[1]["data"],
+             data: data["data"],
              backgroundColor: [
                  'rgba(0, 255, 0, 0.8)',
                  'rgba(0, 255, 0, 0.8)',
@@ -116,12 +116,12 @@ function generaGraficoPie(data) {
 function generaGraficoTreLinee(data) {
   var ctx = $('#myChart2');
   var myChart = new Chart(ctx, {
-     type: data[2]["tipo"],
+     type: data["tipo"],
      data: {
          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
          datasets: [{
-             label: data[2]["labels"][0],
-             data: data[2]["data"][0],
+             label: data["labels"][0],
+             data: data["data"][0],
              borderColor: [
                  'rgba(255, 0, 0, 0.8)',
                ]
@@ -129,15 +129,15 @@ function generaGraficoTreLinee(data) {
 
            },
            {
-             label:  data[2]["labels"][1],
-             data: data[2]["data"][1],
+             label:  data["labels"][1],
+             data: data["data"][1],
              borderColor: [
                  'rgba(0, 255, 0, 0.3)',
                ]
            },
            {
-             label:  data[2]["labels"][2],
-             data: data[2]["data"][2],
+             label:  data["labels"][2],
+             data: data["data"][2],
              borderColor: [
                  'rgba(0, 0, 255, 0.3)',
                ]

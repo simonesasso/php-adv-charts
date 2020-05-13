@@ -19,7 +19,7 @@ function generaGraficoLine(data) {
   $("#main-container").append('<div class="container"><canvas id="myChart"></div>');
   var ctx = $('#myChart');
   var myChart = new Chart(ctx, {
-     type: data[0]["tipo"],
+     type: data[0]["type"],
      data: {
          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
          datasets: [{

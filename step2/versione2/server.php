@@ -10,8 +10,10 @@
  foreach ($graphs as $key => $val) {
    if ($key=="fatturato") {
      $myArr[0]["grafico"] = "fatturato";
-     $myArr[0]["tipo"] = $val["type"];
-     $myArr[0]["data"] = $val["data"];
+     foreach ($val as $key => $value) {
+       $myArr[0][$key] = $val[$key];
+     }
+    
    }elseif ($key!="fatturato") {
      $myArr[$i]["grafico"] = $key;
      $myArr[$i]["tipo"] = $val["type"];
