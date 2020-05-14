@@ -8,7 +8,7 @@
  $myarr = [];
 
 
-     
+
      $myarr["fatturato"]["tipo"] = $graphs["fatturato"]["type"];
      $myarr["fatturato"]["data"] = $graphs["fatturato"]["data"];
 

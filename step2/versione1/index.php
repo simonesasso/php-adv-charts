@@ -16,11 +16,11 @@
       <canvas id="myChart1"></canvas>
     </div>
 
-    
 
 
 
 
+     <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
     <!-- chatjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- jquery -->

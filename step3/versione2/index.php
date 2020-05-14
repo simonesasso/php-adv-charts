@@ -6,7 +6,7 @@
     <title></title>
   </head>
   <body>
-    <h1>test</h1>
+    
   <?php
 
 $tipoUtente = $_GET["level"] ?? "guest";

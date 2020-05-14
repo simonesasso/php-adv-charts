@@ -33,7 +33,7 @@ function generaGraficoLine(data) {
   var myChart = new Chart(ctx, {
      type: data["fatturato"]["tipo"],
      data: {
-         labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+         labels: moment.months(),
          datasets: [{
              label: 'Vendite',
              data: data["fatturato"]["data"],
