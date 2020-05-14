@@ -9,7 +9,7 @@
     <h1>test</h1>
   <?php
 
-$tipoUtente = $_GET["level"];
+$tipoUtente = $_GET["level"] ?? "guest";
    if ($tipoUtente == "guest") {
      echo '<div class="container">';
       echo '<canvas id="myChart"></canvas>';

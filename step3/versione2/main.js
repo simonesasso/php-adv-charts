@@ -6,16 +6,18 @@ console.log(level);
  data: {livello: level},
  success: function (data,stato) {
  console.log(data);
- if (level=="clevel") {
-   generaGraficoLine(data["fatturato"]);
-   generaGraficoPie(data["fatturatoAgent"]);
-   generaGraficoTreLinee(data["team"]);
- }else if (level=="employee") {
-   generaGraficoLine(data["fatturato"]);
-   generaGraficoPie(data["fatturatoAgent"]);
- }else if (level=="guest") {
+ if (data["fatturato"]) {
    generaGraficoLine(data["fatturato"]);
  }
+ if (data["fatturatoAgent"]) {
+
+   generaGraficoPie(data["fatturatoAgent"]);
+ }
+ if (data["team"]) {
+
+   generaGraficoTreLinee(data["team"]);
+ }
+
 
 },
 error: function (richiesta,stato,errore) {
